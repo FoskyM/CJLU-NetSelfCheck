@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="SelfCheck.View.Control.ListItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             xmlns:local="clr-namespace:SelfCheck.View.Control"
+             mc:Ignorable="d" 
+             d:DesignHeight="45" d:DesignWidth="800">
+    <Border Style="{StaticResource BorderRegion}" Effect="{StaticResource EffectShadow2}" Margin="0,5,0,0">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition Width="160"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Button 
+                x:Name="Status_Error"
+                HorizontalAlignment="Left"
+                hc:IconElement.Geometry="{StaticResource WarningGeometry}" 
+                Style="{StaticResource ButtonDashedDanger.Small}" Visibility="Collapsed"/>
+            <Button 
+                x:Name="Status_OK"
+                HorizontalAlignment="Left"
+                hc:IconElement.Geometry="{StaticResource SuccessGeometry}" 
+                Style="{StaticResource ButtonDashedSuccess.Small}"/>
+
+            <TextBlock 
+                Grid.Column="1" 
+                HorizontalAlignment="Left" 
+                Text="{Binding Title,RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:ListItem}}" 
+                Style="{StaticResource TextBlockDefaultBold}"/>
+            
+            <TextBlock 
+                Grid.Column="2" 
+                HorizontalAlignment="Right" 
+                Text="{Binding Subtitle,RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:ListItem}}" 
+                Style="{StaticResource TextBlockDefault}"/>
+        </Grid>
+    </Border>
+</UserControl>

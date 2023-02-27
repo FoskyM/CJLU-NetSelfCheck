@@ -1,0 +1,96 @@
+﻿<UserControl x:Class="SelfCheck.View.Check"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             xmlns:uc="clr-namespace:SelfCheck.View.Control"
+             xmlns:local="clr-namespace:SelfCheck.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <hc:TransitioningContentControl>
+
+        <StackPanel>
+            <StackPanel Margin="20,20,20,0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel HorizontalAlignment="Left" Grid.Column="0">
+                        <TextBlock HorizontalAlignment="Left" Text="校园网问题检查" Style="{StaticResource TextBlockTitleBold}" FontSize="24"/>
+                        <TextBlock HorizontalAlignment="Left" Text="立即识别潜在的网络问题" Style="{StaticResource TextBlockDefault}"/>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Right" Grid.Column="1">
+                        <Button Content="立即扫描" Style="{StaticResource ButtonPrimary}" x:Name="Btn_Check" Click="Btn_Check_Click" Cursor="Hand"/>
+                        <Button Content="马上修复" Style="{StaticResource ButtonPrimary}" x:Name="Btn_Fix" Click="Btn_Fix_Click" Cursor="Hand" Visibility="Collapsed"/>
+                        <Button Content="返回" Style="{StaticResource ButtonPrimary}" x:Name="Btn_Back" Click="Btn_Back_Click" Cursor="Hand" Visibility="Collapsed"/>
+                    </StackPanel>
+                </Grid>
+
+            </StackPanel>
+            <ProgressBar Style="{StaticResource ProgressBarFlat}" Value="0" Maximum="200" IsIndeterminate="false" Margin="0,20,0,20" x:Name="Progress_Check"/>
+
+            <hc:ScrollViewer>
+                <StackPanel>
+                    <StackPanel 
+                        x:Name="Check_Result_List" 
+                        Visibility="Collapsed"
+                        >
+                        <uc:ListItem x:Name="Item_Service" Status="ok" Title="相关服务" Subtitle=""/>
+                        <uc:ListItem x:Name="Item_Safety" Status="ok" Title="安全层相关" Subtitle=""/>
+                        <uc:ListItem x:Name="Item_Cache" Status="ok" Title="网络缓存" Subtitle=""/>
+                        <uc:ListItem x:Name="Item_Status" Status="ok" Title="网络状态" Subtitle=""/>
+                        <uc:ListItem x:Name="Item_Other" Status="ok" Title="其他" Subtitle=""/>
+                    </StackPanel>
+
+                    <StackPanel Margin="20,0,20,20">
+                        <hc:LoadingCircle HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,60,0,0" x:Name="Loading_Check" Visibility="Collapsed" />
+                        <Grid x:Name="Tips_Index">
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel HorizontalAlignment="Left" Grid.Column="0" Margin="15">
+                                <TextBlock HorizontalAlignment="Left" Text="相关服务" Style="{StaticResource TextBlockSubTitleBold}"/>
+                                <TextBlock HorizontalAlignment="Left" Text="拨号相关服务未启动" Style="{StaticResource TextBlockDefault}"/>
+                            </StackPanel>
+
+                            <StackPanel HorizontalAlignment="Left" Grid.Column="0" Grid.Row="1" Margin="15">
+                                <TextBlock HorizontalAlignment="Left" Text="网络适配器（未完成）" Style="{StaticResource TextBlockSubTitleBold}"/>
+                                <TextBlock HorizontalAlignment="Left" Text="有可能导致720错误" Style="{StaticResource TextBlockDefault}"/>
+                            </StackPanel>
+
+                            <StackPanel HorizontalAlignment="Left" Grid.Column="0" Grid.Row="2" Margin="15">
+                                <TextBlock HorizontalAlignment="Left" Text="安全层相关" Style="{StaticResource TextBlockSubTitleBold}"/>
+                                <TextBlock HorizontalAlignment="Left" Text="导致87、139、710、789等安全层错误" Style="{StaticResource TextBlockDefault}"/>
+                            </StackPanel>
+
+                            <StackPanel HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0" Margin="15">
+                                <TextBlock HorizontalAlignment="Left" Text="网络状况" Style="{StaticResource TextBlockSubTitleBold}"/>
+                                <TextBlock HorizontalAlignment="Left" Text="有时可能莫名其妙断网了" Style="{StaticResource TextBlockDefault}"/>
+                            </StackPanel>
+
+                            <StackPanel HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" Margin="15">
+                                <TextBlock HorizontalAlignment="Left" Text="网络缓存" Style="{StaticResource TextBlockSubTitleBold}"/>
+                                <TextBlock HorizontalAlignment="Left" Text="可能导致809" Style="{StaticResource TextBlockDefault}"/>
+                            </StackPanel>
+
+                            <StackPanel HorizontalAlignment="Left" Grid.Column="1" Grid.Row="2" Margin="15">
+                                <TextBlock HorizontalAlignment="Left" Text="其他" Style="{StaticResource TextBlockSubTitleBold}"/>
+                                <TextBlock HorizontalAlignment="Left" Text="扫描其它潜在原因" Style="{StaticResource TextBlockDefault}"/>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </StackPanel>
+            </hc:ScrollViewer>
+
+        </StackPanel>
+    </hc:TransitioningContentControl>
+</UserControl>

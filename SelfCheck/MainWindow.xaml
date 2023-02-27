@@ -1,0 +1,22 @@
+﻿<Window x:Class="SelfCheck.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        xmlns:local="clr-namespace:SelfCheck"
+        xmlns:view="clr-namespace:SelfCheck.View"
+        mc:Ignorable="d"
+        Title="计量校园网错误自检工具" Height="468" Width="742" WindowStartupLocation="CenterScreen" MinWidth="430">
+    <TabControl Margin="10" Style="{StaticResource TabControlInLine}">
+        <TabItem Header="一键检测">
+            <view:Check></view:Check>
+        </TabItem>
+        <TabItem Header="查询错误">
+            <view:Search></view:Search>
+        </TabItem>
+        <TabItem Header="关于">
+            <view:About></view:About>
+        </TabItem>
+    </TabControl>
+</Window>
