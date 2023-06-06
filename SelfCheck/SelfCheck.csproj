@@ -11,8 +11,11 @@
     <Company>FoskyTech</Company>
     <Product>计量校园网错误自检工具</Product>
     <Description>计量校园网错误自检工具</Description>
-    <Copyright>Developed by FoskyM.Copyright © FoskyTech 2023</Copyright>
+    <Copyright>Developed by FoskyM. Copyright © FoskyTech 2023</Copyright>
     <NeutralLanguage>zh-CN</NeutralLanguage>
+    <AssemblyVersion>1.1.0</AssemblyVersion>
+    <FileVersion>1.1.0</FileVersion>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>

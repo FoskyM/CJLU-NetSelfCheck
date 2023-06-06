@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:SelfCheck"
         xmlns:view="clr-namespace:SelfCheck.View"
         mc:Ignorable="d"
-        Title="计量校园网错误自检工具" Height="468" Width="742" WindowStartupLocation="CenterScreen" MinWidth="430">
+        Title="计量校园网错误自检工具" Height="492" Width="742" WindowStartupLocation="CenterScreen" MinWidth="430">
     <TabControl Margin="10" Style="{StaticResource TabControlInLine}">
         <TabItem Header="一键检测">
             <view:Check></view:Check>

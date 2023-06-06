@@ -41,6 +41,7 @@
                         <uc:ListItem x:Name="Item_Safety" Status="ok" Title="安全层相关" Subtitle=""/>
                         <uc:ListItem x:Name="Item_Cache" Status="ok" Title="网络缓存" Subtitle=""/>
                         <uc:ListItem x:Name="Item_Status" Status="ok" Title="网络状态" Subtitle=""/>
+                        <uc:ListItem x:Name="Item_Dns" Status="ok" Title="DNS状态" Subtitle=""/>
                         <uc:ListItem x:Name="Item_Other" Status="ok" Title="其他" Subtitle=""/>
                     </StackPanel>
 
